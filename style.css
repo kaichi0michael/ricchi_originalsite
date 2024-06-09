@@ -1,0 +1,237 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #444444;
+    font-family: "Zen Maru Gothic", serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    height: 140px;
+    background-color: #B2E9FF;
+}
+
+.container div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.container ul {
+    display: flex;
+    list-style: none;
+}
+
+.container a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 100;
+    padding: 10px;
+    color: #444444;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+
+.ikoi {
+    font-size: 25px;
+    font-weight: 200;
+}
+
+.nigiwai {
+    font-size: 32px;
+    font-weight: 300;
+}
+
+.firstview {
+    width: 100%;
+    height: 960px;
+    background-image: url(images/family.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.secondview {
+    width: 100%;
+    background-color: #B2E9FF;
+}
+
+.secondview img {
+    width: 100%;
+    height: auto;
+}
+
+.sec {
+    padding-top: 175px;
+    padding-bottom: 135px;
+}
+
+.sentence {
+    font-size: 28px;
+    line-height: 3;
+    text-align: center;
+}
+
+.sentences {
+    display: flex;
+    justify-content: center;
+}
+
+.sentence1, .sentence2 {
+    font-size: 16px;
+    width: 80%;
+    max-width: 400px;
+    padding: 25px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.pic {
+    position: relative; /* 追加 */
+    width: 100%;
+    height: 400px; /* 必要に応じて高さを調整 */
+    overflow: hidden; /* 追加 */
+    text-align: center;
+}
+
+.pic img {
+    position: absolute;
+    top: 70%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    width: 150%; /* 画像がはみ出るように大きくする */
+    height: auto;
+}
+
+.thirdview {
+    background-color: #DCF0DA;
+    background-image: url(images/road.png);
+    width: 100%;
+    padding: 20px;
+    background-size: cover; /* 追加: 画像がコンテナ全体をカバーする */
+    background-position: center; /* 追加: 画像を中央に配置 */
+    background-repeat: no-repeat; /* 追加: 画像を繰り返さない */
+}
+
+.item1, .item3 {
+    margin: 105px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.item2 {
+    margin: 105px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+}
+
+.picture img {
+    max-width: 300px;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.items h3 {
+    padding: 15px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.items p {
+    padding: 15px;
+    text-align: left;
+}
+
+.vlog {
+    background-color: #EEE7DA;
+    width: 100%;
+    padding: 20px;
+}
+
+.vlogbox {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.vbox1, .vbox2, .vbox3 {
+    width: 100%;
+    max-width: 300px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.vbox1 img, .vbox2 img, .vbox3 img {
+    width: 100%;
+}
+
+.comment {
+    padding: 20px;
+}
+
+.more-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.more-button {
+    background-color: #C6C4A5;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.more-button:hover {
+    background-color: #666666;
+}
+
+@media (max-width: 768px) {
+    .container a {
+        font-size: 24px;
+    }
+
+    .sentences {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .sentence1, .sentence2 {
+        width: 45%;
+        margin: 20px;
+    }
+
+    .thirdview .item1, .thirdview .item2, .thirdview .item3 {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .vlogbox {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .vbox1, .vbox2, .vbox3 {
+        margin: 20px;
+    }
+}
