@@ -83,6 +83,7 @@
 .sentences {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .sentence1, .sentence2 {
@@ -91,14 +92,14 @@
     max-width: 400px;
     padding: 25px;
     margin: 20px 0;
-    text-align: center;
+    text-align: left;
 }
 
 .pic {
-    position: relative; /* 追加 */
+    position: relative; 
     width: 100%;
-    height: 400px; /* 必要に応じて高さを調整 */
-    overflow: hidden; /* 追加 */
+    height: 400px;
+    overflow: hidden;
     text-align: center;
 }
 
@@ -107,8 +108,22 @@
     top: 70%;
     left: 47%;
     transform: translate(-50%, -50%);
-    width: 150%; /* 画像がはみ出るように大きくする */
+    width: 150%;
     height: auto;
+}
+
+.text1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Alfa Slab One", serif;
+    margin: 10px;
+    font-size: 70px;
+    font-weight: bold;
+    color: transparent;
+    -webkit-text-stroke: 1px #444444;
+    letter-spacing: 5px;
 }
 
 .thirdview {
@@ -116,15 +131,16 @@
     background-image: url(images/road.png);
     width: 100%;
     padding: 20px;
-    background-size: cover; /* 追加: 画像がコンテナ全体をカバーする */
-    background-position: center; /* 追加: 画像を中央に配置 */
-    background-repeat: no-repeat; /* 追加: 画像を繰り返さない */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .item1, .item3 {
     margin: 105px;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .item2 {
@@ -132,6 +148,7 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .picture img {
@@ -164,17 +181,30 @@
     padding: 20px;
 }
 
+.text2 {
+    display: flex;
+    justify-content: center;
+    font-family: "Alfa Slab One", serif;
+    margin: 10px;
+    font-size: 70px;
+    font-weight: bold;
+    color: transparent;
+    -webkit-text-stroke: 1px #444444;
+    letter-spacing: 5px;
+}
+
 .vlogbox {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .vbox1, .vbox2, .vbox3 {
     width: 100%;
     max-width: 300px;
     margin: 20px 0;
-    text-align: center;
+    text-align: left;
 }
 
 .vbox1 img, .vbox2 img, .vbox3 img {
@@ -182,7 +212,9 @@
 }
 
 .comment {
-    padding: 20px;
+    width: 300px;
+    height: 201px;
+    padding: 20px 0 20px;
 }
 
 .more-button-container {
@@ -206,32 +238,193 @@
     background-color: #666666;
 }
 
+.pic2 {
+
+}
+
+.calendar {
+    background-color: #F5F5F5;
+    width: 100%;
+    height: auto;
+}
+
+.calendar .cal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.calendar .cal img {
+    max-width: 100%;
+    height: auto;
+}
+
+.footer {
+    background-color: #AFC8AD;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 @media (max-width: 768px) {
-    .container a {
-        font-size: 24px;
+    .container {
+        flex-direction: column;
+        height: auto;
     }
 
-    .sentences {
-        flex-direction: row;
-        justify-content: center;
+    .container ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container a {
+        font-size: 24px;
+        padding: 5px;
+    }
+
+    .pic img {
+        position: absolute;
+        top: 315px;
+        left: 47%;
+        transform: translate(-50%, -50%);
+        width: 150%;
+        height: auto;
+    }
+
+    .text1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: "Alfa Slab One", serif;
+        margin: 10px;
+        font-size: 40px;
+        font-weight: bold;
+        color: transparent;
+        -webkit-text-stroke: 1px #444444;
+        letter-spacing: 5px;
     }
 
     .sentence1, .sentence2 {
-        width: 45%;
-        margin: 20px;
+        width: 90%;
     }
 
-    .thirdview .item1, .thirdview .item2, .thirdview .item3 {
-        flex-direction: row;
-        justify-content: space-around;
+    .sentence1 {
+        padding: 30px 0 0 0; /* 上下のパディングを調整 */
+        margin: 0; /* マージンを削除 */
+    }
+
+    .sentence2 {
+        margin: 0 0 20px 0; /* 上下のマージンを調整 */
+        padding: 0; /* パディングを削除 */
+    }
+
+    .item1, .item2, .item3 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .picture img {
+        max-width: 100%;
     }
 
     .vlogbox {
-        flex-direction: row;
-        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
     }
+}
 
-    .vbox1, .vbox2, .vbox3 {
-        margin: 20px;
+/* フェードインアニメーション */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+/* SVGのサイズを調整し、左と上にスペースを追加 */
+svg {
+    max-width: 600px; /* SVGタグの横幅を600pxに設定 */
+    width: 100%; /* レスポンシブ対応にするため100%を指定 */
+    height: auto;
+}
+
+/* 初期状態で非表示 */
+#mask .cls-2, #mask .cls-1 {
+    fill: none;
+    stroke-width: 1;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+    stroke-dasharray: 1500; /* ダッシュの間隔 */
+    stroke-dashoffset: 1500; /* ダッシュのオフセット */
+    opacity: 1; 
+    transition: opacity 1s ease-in-out; /* フェードインのトランジション */
+}
+
+#mask .cls-2 {
+    stroke: #444444; /* 文字の色 */
+}
+
+#mask .cls-1 {
+    stroke: #afc8ad; /* 文字の色 */
+}
+
+.visible.cls-1 {
+    animation: draw 5s forwards, fillFade1 3s forwards 5s; /* 描画と塗りつぶしのアニメーションを追加 */
+}
+
+.visible.cls-2 {
+    animation: draw 5s forwards, fillFade2 3s forwards 5s; /* 描画と塗りつぶしのアニメーションを追加 */
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fillFade1 {
+    0% {
+        fill: none;
+    }
+    25% {
+        fill: rgba(175,200,171,0.25);
+    }
+    50% {
+        fill: rgba(175,200,171,0.5);
+    }
+    75% {
+        fill: rgba(175,200,171,0.75);
+    }
+    100% {
+        fill: rgba(175,200,171,1); /* 塗りつぶしの色 for cls-1 */
+    }
+}
+
+@keyframes fillFade2 {
+    0% {
+        fill: none;
+    }
+    25% {
+        fill: rgba(68,68,68,0.25);
+    }
+    50% {
+        fill: rgba(68,68,68,0.5);
+    }
+    75% {
+        fill: rgba(68,68,68,0.75);
+    }
+    100% {
+        fill: rgba(68,68,68,1); /* 塗りつぶしの色 for cls-1 */
     }
 }
