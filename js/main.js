@@ -11,6 +11,15 @@ $(document).ready(function() {
                 $elem.addClass('visible');
             }
         });
+
+        // スクロール量に応じてヘッダーの透過を制御
+        if ($(window).scrollTop() > 50) { // 50px以上スクロールしたら
+            $('.container').addClass('header-transparent');
+        } else {
+            $('.container').removeClass('header-transparent');
+        }
+
+        
     });
 
     // ページ読み込み時に一度実行
@@ -29,4 +38,32 @@ new Vivus('mask', {
             });
         }, 1000); // 1秒後に表示を開始
     }
+});
+
+window.addEventListener('scroll', function() {
+    const section = document.getElementById('photo');
+    const sectionPosition = section.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.5;
+
+    if (sectionPosition < screenPosition) {
+        setTimeout(() => {
+            document.querySelector('.backimg').classList.add('animate');
+        }, 1000); // 2秒後にアニメーションを開始
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    var tree = document.querySelector('.tree');
+
+    function checkVisibility() {
+        var rect = tree.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+            tree.classList.add('visible');
+        } else {
+            tree.classList.remove('visible');
+        }
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility(); // 初期チェック
 });
